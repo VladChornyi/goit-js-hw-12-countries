@@ -35,4 +35,4 @@ var n,t=arguments[3],r=require("buffer").Buffer;(function(){var r,e=200,u="Unsup
 },{"../tpl/countryTpl.hbs":"lvG8","../tpl/countryListTpl.hbs":"SZmd","@pnotify/bootstrap4/dist/PNotifyBootstrap4.css":"clu1","@pnotify/core":"txz9","@pnotify/bootstrap4":"J1j7","lodash":"B1iE"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/fetchCountries");
 },{"./sass/main.scss":"clu1","./js/fetchCountries":"irxn"}]},{},["Focm"], null)
-//# sourceMappingURL=/parcel-project-template/src.6464a119.js.map
+//# sourceMappingURL=/goit-js-hw-12-countries/src.6464a119.js.map
