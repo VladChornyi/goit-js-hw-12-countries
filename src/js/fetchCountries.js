@@ -1,10 +1,9 @@
 import countryTpl from '../tpl/countryTpl.hbs';
 import countryListTpl from '../tpl/countryListTpl.hbs';
-import '@pnotify/bootstrap4/dist/PNotifyBootstrap4.css';
-import { defaultModules } from '@pnotify/core';
-import { alert, notice, info, success, error } from '@pnotify/core';
-import * as PNotifyBootstrap4 from '@pnotify/bootstrap4';
-defaultModules.set(PNotifyBootstrap4, {});
+import { error } from '@pnotify/core';
+import { info } from '@pnotify/core';
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/BrightTheme.css';
 import _ from 'lodash';
 
 const inputNode = document.querySelector('.input');
@@ -23,14 +22,14 @@ const findCounry = function (e) {
         document.querySelector('.container').innerHTML = markup;
       } else if (country.length > 10) {
         document.querySelector('.container').innerHTML = '';
-        alert({
+        info({
           text: 'Too many matches found. Please enter a more specific query!',
           type: 'info',
         });
       } else {
         document.querySelector('.container').innerHTML = '';
-        alert({
-          text: 'Введены некорректные данные',
+        error({
+          text: 'The request is incorrect',
           type: 'info',
         });
       }
