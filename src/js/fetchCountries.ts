@@ -6,19 +6,22 @@ import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
 import _ from 'lodash';
 
-const inputNode = document.querySelector('.input');
+type FindCountry = (e: Event) => void;
+type Country= [];
 
-const findCounry = function (e) {
-  fetch(`https://restcountries.eu/rest/v2/name/${e.target.value}`)
+const inputNode: HTMLInputElement = document.querySelector('.input');
+
+const findCounry: FindCountry = function (e) {
+  fetch(`https://restcountries.eu/rest/v2/name/${(e.target as HTMLInputElement) .value}`)
     .then(response => {
       return response.json();
     })
-    .then(country => {
+    .then((country:Country) => {
       if (country.length === 1) {
-        const markup = countryTpl(country);
+        const markup: string = countryTpl(country);
         document.querySelector('.container').innerHTML = markup;
       } else if (country.length > 1 && country.length <= 10) {
-        const markup = countryListTpl(country);
+        const markup: string = countryListTpl(country);
         document.querySelector('.container').innerHTML = markup;
       } else if (country.length > 10) {
         document.querySelector('.container').innerHTML = '';
